@@ -1,19 +1,21 @@
 {
   "name": "tmind-ui",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fanzouguo/tMind-Ui.git"
+  },
   "scripts": {
+    "clean": "shx rm -rf lib",
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build --modern --report",
-    "pkg": "vue-cli-service build --report",
-    "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e",
+    "try": "yarn lint && yarn clean && vue-cli-service build --target lib --name tmind-ui --dest lib src/index.js",
+    "build": "yarn lint && yarn clean && yarn prePkg && vue-cli-service build --target lib --name tmind-ui --dest lib src/index.js --report && yarn postPkg",
+    "prePkg": "node ./app.dev/preBuild.js",
+    "postPkg": "node ./app.dev/postBuild.js",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name tmind-ui --dest lib src/index.js --report",
-    "prelib": "node ./app.dev/preLib.js",
-    "postlib": "node ./app.dev/postlib.js",
-    "prebuild": "node ./app.dev/preBuild.js",
-    "postbuild": "node ./app.dev/postBuild.js"
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
     "core-js": "~3.9.0",
@@ -21,7 +23,8 @@
   },
   "devDependencies": {
     "@expo/browser-polyfill": "~0.1.1",
-    "@gfx/zopfli": "~1.0.15",    "@vue/cli-plugin-babel": "~4.5.0",
+    "@gfx/zopfli": "~1.0.15",
+    "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-e2e-cypress": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -48,5 +51,6 @@
     "vue-router": "~4.0.0-0",
     "vuex": "~4.0.0-0",
     "webpack-spritesmith": "~1.1.0"
-  }
+  },
+  "lastBuild": "2021-03-13 19:32:04.352"
 }

@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <colorPicker :value="color" v-on:change="headleChangeColor"></colorPicker>
+  <!-- <colorPicker :value="color" v-on:change="headleChangeColor"></colorPicker> -->
+  <tInput></tInput>
   <router-view/>
 </template>
 
