@@ -1,0 +1,7 @@
+/build/
+/dist/
+/*.dts
+/src/assets/
+/public/
+/0_tobeDel/
+/lib/
