@@ -4,6 +4,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const pkg = fs.readJsonSync('./package.json');
 
+const splitLineStr = '\n----------------------------------------------------------------------------\n';
+
 const pathUser = process.env.HOME || process.env.USERPROFILE || '';
 const color = {
   bold: ['\x1B[1m', '\x1B[22m'],
@@ -39,6 +41,8 @@ const echo = (msg, title, type) => {
     _func(`${b} ${title || a} ${c} ${d} ${msg} ${e}`);
   }
 };
+
+const echoLine = () => echo(splitLineStr);
 
 const frm = (str, len = 2) => {
 	return `${str}`.padStart(len, '0');
@@ -94,8 +98,10 @@ const pushToGithub = async () => {
 			shelljs.exec(v);
 		}
 		echo('GITHUB 提交成功!', 'Done', 'SUCC');
+		echoLine();
 	} catch (err) {
 		echo(err, 'GITHUB-提交失败', 'ERR');
+		echoLine();
 	}
 };
 
@@ -116,8 +122,10 @@ const publishToNpm = async () => {
 				echo('项目的 package.json 中 private 字段已申明为： false，该项目不允许发布到 npm.', 'NPM-发布被拒绝', 'WARN');
 			}
 		}
+		echoLine();
 	} catch (err) {
 		echo(err, 'NPM-发布失败', 'ERR');
+		echoLine();
 	}
 };
 
@@ -145,6 +153,7 @@ const reInstallLastVerInRootRepo = async () => {
 				const pkgName = pkg.name;
 				shelljs.exec(`yarn add ${pkgName}`);
 				echo('从NPM更新本地根仓库成功!', 'Done', 'SUCC');
+				echoLine();
 				echo(`当前根仓库上安装的${pkgName}版本号如下：`, '最新版', 'SUCC');
 				shelljs.exec(`yarn list ${pkgName}`);
 			} else {
