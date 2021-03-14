@@ -26,7 +26,7 @@
       <ul class="tColor">
         <li v-for="(color, index) of bColor" :key="index" :style="{ backgroundColor: color }" @mouseover="setHoveColor(color)" @mouseout="setHoveColor" @click="updataValue(color)"></li>
       </ul>
-      <h3 @click="triggerHtml5Color">更多颜色...</h3>
+      <h3 @click="triggerHtml5Color">自定义...</h3>
       <!-- 用以激活HTML5颜色面板 -->
       <input type="color" ref="html5Color" v-model="html5Color" @change="updataValue(html5Color)" />
     </div>
