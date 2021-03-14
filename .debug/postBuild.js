@@ -1,7 +1,10 @@
 const shelljs = require('shelljs');
 const inquirer = require('inquirer');
 const fs = require('fs-extra');
+const path = require('path');
 const pkg = fs.readJsonSync('./package.json');
+
+const pathUser = process.env.HOME || process.env.USERPROFILE || '';
 
 const frm = (str, len = 2) => {
 	return `${str}`.padStart(len, '0');
@@ -37,6 +40,34 @@ const getGitCmd = (memo, pkg, tagThis = false, branch = 'main') => {
 	return _arr;
 };
 
+const getRepo = async () => {
+	if (pathUser) {
+		const fData = fs.readFileSync(path.resolve(pathUser, '.tMind'), {
+			encoding: 'utf-8'
+		});
+		const lines = fData.split(/\r?\n/);
+		let pathRepo = '';
+		for (const v of lines) {
+			if (v.startsWith('ROOT_REPO')) {
+				const [a, b] = v.split('=');
+				if (a && b) {
+					pathRepo = b;
+				}
+			}
+		}
+		if (pathRepo && pkg.name) {
+			console.log(pathRepo);
+			shelljs.cd(pathRepo);
+			shelljs.exec(`yarn add ${pkg.name}`);
+			const resYarn = shelljs.exec(`yarn list ${pkg.name}`);
+			console.log(resYarn);
+		} else {
+			console.log('未找到根仓库路径');
+		}
+		console.log('Done!');
+	}
+};
+
 /* eslint-disable no-unused-vars */
 const execBuild = (async () => {
 	const { commitMemo } = await inquirer.prompt({
@@ -69,4 +100,5 @@ const execBuild = (async () => {
 			console.log('项目的 package.json 中 private 字段已申明为： false，该项目不允许发布到 npm.');
 		}
 	}
+	await getRepo();
 })();
