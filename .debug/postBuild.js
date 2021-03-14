@@ -59,8 +59,7 @@ const getRepo = async () => {
 			console.log(pathRepo);
 			shelljs.cd(pathRepo);
 			shelljs.exec(`yarn add ${pkg.name}`);
-			const resYarn = shelljs.exec(`yarn list ${pkg.name}`);
-			console.log(resYarn);
+			shelljs.exec(`yarn list ${pkg.name}`);
 		} else {
 			console.log('未找到根仓库路径');
 		}
