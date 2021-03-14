@@ -4,8 +4,6 @@ const fs = require('fs-extra');
 const path = require('path');
 const pkg = fs.readJsonSync('./package.json');
 
-const splitLineStr = '\n----------------------------------------------------------------------------\n';
-
 const pathUser = process.env.HOME || process.env.USERPROFILE || '';
 const color = {
   bold: ['\x1B[1m', '\x1B[22m'],
@@ -42,7 +40,7 @@ const echo = (msg, title, type) => {
   }
 };
 
-const echoLine = () => echo(splitLineStr);
+const echoLine = () => console.log('\n----------------------------------------------------------------------------\n');
 
 const frm = (str, len = 2) => {
 	return `${str}`.padStart(len, '0');
