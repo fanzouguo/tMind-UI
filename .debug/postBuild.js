@@ -59,14 +59,12 @@ const execBuild = (async () => {
 	const allowPublish = (!missPrivateDef && !pkg.private);
 	if (missPrivateDef) {
 		/* eslint-disable no-console */
-		console.log('项目的 package.json 未指定 private 字段，若需要提交 NPM，请先配置该字段');
+		console.log('项目的 package.json 未指定 private 字段，若需要提交 NpmJs，请先配置该字段');
 	} else {
 		if (allowPublish) {
-			// _arr.push('npm login');
-			// _arr.push('npm publish');
-			shelljs.exec('npm publish');
-			// console.log('请输入 npm publish 开始发布');
-			// console.log('项目已同时发布/更新到 www.npmjs.com');
+			shelljs.exec('yarn publish');
+			// console.log('请输入 yarn publish 开始发布');
+			console.log('项目已同时发布/更新到 www.npmjs.com');
 		} else {
 			console.log('项目的 package.json 中 private 字段已申明为： false，该项目不允许发布到 npm.');
 		}
