@@ -1,48 +1,34 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <!-- <colorPicker :value="color" v-on:change="headleChangeColor"></colorPicker> -->
-  <tInput></tInput>
-  <router-view/>
+  <img alt="Vue logo" src="./assets/logo.png">
+  <HelloWorld msg="tMind-UI 组件测试页面"/>
+  <colorPicker v-model="currColor"></colorPicker>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld.vue';
+
 export default {
+  name: 'App',
+  components: {
+    HelloWorld
+  },
   data() {
     return {
-      color: '#333'
+      currColor: '#000000'
     };
-  },
-  methods: {
-    headleChangeColor(e) {
-      console.log(e); // eslint-disable-line
-      this.color = e;
-    }
   }
 };
 </script>
 
 <style lang="scss">
+@import './.libTemp/tmindUi.css';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  margin-top: 60px;
 }
 </style>

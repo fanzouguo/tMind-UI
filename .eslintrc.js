@@ -10,7 +10,6 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  // 规则配置写在这里
   rules: {
     // 要求或禁止 var 声明中的初始化(初值)
     'init-declarations': 1,
@@ -97,4 +96,4 @@ module.exports = {
       }
     }
   ]
-};
+}

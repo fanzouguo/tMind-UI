@@ -1,56 +1,39 @@
 {
   "name": "tmind-ui",
-  "version": "1.0.3",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:fanzouguo/tMind-Ui.git"
-  },
+  "version": "1.1.2",
+  "private": true,
   "scripts": {
-    "clean": "shx rm -rf lib",
     "dev": "vue-cli-service serve",
-    "try": "yarn lint && yarn clean && vue-cli-service build --target lib --name tmind-ui --dest lib src/index.js",
-    "build": "yarn lint && yarn clean && yarn prePkg && vue-cli-service build --target lib --name tmind-ui --dest lib src/index.js --report && yarn postPkg",
-    "prePkg": "node ./app.dev/preBuild.js",
-    "postPkg": "node ./app.dev/postBuild.js",
-    "lint": "vue-cli-service lint",
+    "debug": "vue-cli-service build --target lib --name tmindUi --dest lib packages/index.js && node ./.debug/preview.js",
     "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e"
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint",
+    "build": "node ./.debug/preBuild.js && vue-cli-service build --target lib --name tmindUi --dest lib packages/index.js && node ./.debug/postBuild.js"
   },
   "dependencies": {
-    "core-js": "~3.9.0",
-    "vue": "~3.0.0"
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@expo/browser-polyfill": "~0.1.1",
-    "@gfx/zopfli": "~1.0.15",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-e2e-cypress": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "~3.0.0",
-    "@vue/eslint-config-standard": "~5.1.2",
-    "@vue/test-utils": "~2.0.0-0",
-    "babel-eslint": "~10.1.0",
-    "compression-webpack-plugin": "5.0.1",
-    "eslint": "~6.7.2",
-    "eslint-plugin-import": "~2.20.2",
-    "eslint-plugin-node": "~11.1.0",
-    "eslint-plugin-promise": "~4.2.1",
-    "eslint-plugin-standard": "~4.0.0",
-    "eslint-plugin-vue": "~7.0.0-0",
-    "glob-all": "~3.2.1",
-    "image-webpack-loader": "~7.0.1",
-    "sass": "~1.26.5",
-    "sass-loader": "~8.0.2",
-    "style-resources-loader": "~1.4.1",
-    "vue-jest": "~5.0.0-0",
-    "vue-router": "~4.0.0-0",
-    "vuex": "~4.0.0-0",
-    "webpack-spritesmith": "~1.1.0"
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/test-utils": "^2.0.0-0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3",
+    "vue-jest": "^5.0.0-0"
   },
-  "lastBuild": "2021-03-13 19:32:04.352"
+  "lastBuild": "2021-03-15 04:59:09.939"
 }
