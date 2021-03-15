@@ -33,6 +33,18 @@ yarn test:e2e
 yarn lint
 ```
 
+### What happend in build
+```
+1、The terminal console will be cleared;
+2、The version tag in package.json file will be update(depends on your choose);
+3、Application will be packed into ./lib folder;
+4、Add & commit into git repo;
+5、Push the builded files into remote github(if this project is link to remote git repo);
+6、Pubulish the new version lib into npmJs, if this project is not privated(see the package.json -> private);
+7、Then local repo store will reinstall with new version.(local repo store's location was set by .tMind file of tMind-Cli).
+8、It's Done.
+```
+
 ### about
 Want more infomation, you can visit the offcial website of Shanghai smpoo soft Co.
 [SMPOO](www.smpoo.om)
