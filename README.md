@@ -1,6 +1,6 @@
 # tmind-ui
 
-## Project setup
+### Project setup
 ```
 yarn add tmind-ui
 ```
@@ -10,7 +10,8 @@ yarn add tmind-ui
 yarn build
 ```
 
-### if you want to preview the effect when debug, your should clone the whole repo from github first cause of the npm package is just a pared-down forlder. then you can like this:
+### how to debug
+if you want to preview the effect when debug, your should clone the whole repo from github first cause of the npm package is just a pared-down forlder. then you can like this:
 ```
 yarn dev      // will run the example into localhost:8080
 yarn debug    // will rebuild the lib forlder without neither git commit nor yarn publish. At the same
@@ -32,5 +33,6 @@ yarn test:e2e
 yarn lint
 ```
 
-### Want more infomation, you can visit the offcial website of Shanghai smpoo soft Co.
+### about
+Want more infomation, you can visit the offcial website of Shanghai smpoo soft Co.
 [SMPOO](www.smpoo.om)
