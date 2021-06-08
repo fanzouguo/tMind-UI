@@ -1,6 +1,8 @@
 // @ts-nocheck
+// import 'tailwindcss/tailwind.css';
+import './assets/css/tailwindcss.css';
 // 导入颜色选择器组件
-import colorPicker from './components/colorPicker';
+import colorPicker from './components/DataElement/colorPicker';
 
 // 存储组件列表
 const components = [

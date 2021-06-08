@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import clickoutside from '../../directive/clickoutside';
+import clickoutside from '../../../directive/clickoutside';
 
 export default {
   name: 'colorPicker',

@@ -19,5 +19,6 @@ src
 rollup.config.js
 vue.config.js
 *.lock
+*.log
 **/tsconfig.json
 **/webpack.config.js
