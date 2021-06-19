@@ -2,6 +2,8 @@
 
 ---
 
+## [规范（Rule）](./Rule/index.md)
+
 ## 基础（Base）
 
 ### 字体（tFont）

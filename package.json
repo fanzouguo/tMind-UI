@@ -1,6 +1,6 @@
 {
   "name": "tmind-ui",
-  "version": "1.4.15",
+  "version": "1.4.17",
   "private": false,
   "repository": {
     "type": "git",
@@ -40,5 +40,5 @@
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
   },
-  "lastBuild": "2021-06-08 08:15:38.15"
+  "lastBuild": "2021-06-19 15:08:27.854"
 }

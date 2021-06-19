@@ -38,7 +38,7 @@
 import clickoutside from '../../../directive/clickoutside';
 
 export default {
-  name: 'colorPicker',
+  name: 'tColorPicker',
   directives: {
     clickoutside
   },

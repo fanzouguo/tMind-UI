@@ -1,7 +1,8 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="tMind-UI 组件测试页面"/>
-  <colorPicker v-model="currColor"></colorPicker>
+  <tButton></tButton>
+  <tColorPicker v-model="currColor"></tColorPicker>
 </template>
 
 <script>
