@@ -1,5 +1,5 @@
 <template>
-	<button class="mx-sm">{{ defConf.title || '按钮' }}</button>
+	<button class="mx-sm">{{ getConf.title || '按钮' }}</button>
 </template>
 
 <script>
